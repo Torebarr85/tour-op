@@ -2,5 +2,9 @@
   <span>My Application</span>
   <button mat-stroked-button routerLink="home">Home</button>
   <button mat-stroked-button routerLink="profile">Profile</button>
-  <button mat-stroked-button>Login</button>
+  @if(authSignal()){
+  <button mat-stroked-button (click)="auth.logout({logoutParams: {returnTo: document.location.origin}})">LogOut</button>
+  } @else{
+  <button mat-stroked-button (click)="auth.loginWithPopup()">LogIn</button>
+  }
 </mat-toolbar>

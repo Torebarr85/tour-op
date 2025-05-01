@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { DOCUMENT } from '@angular/common';
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -9,4 +13,14 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  auth = inject(AuthService);
+  document = inject(DOCUMENT);
+  authSignal = toSignal(this.auth.isAuthenticated$);
+
+  constructor() {
+    this.auth.isAuthenticated$.subscribe((val) => {
+      console.log('isAuthenticated', val);
+    });
+  }
+}
