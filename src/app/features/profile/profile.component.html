@@ -1,2 +1,7 @@
 <h1>profile works!</h1>
 <pre>{{auth.user$ | async | json}}</pre>
+@if(auth.user$ | async; as user){
+    <h3>{{user?.family_name}}</h3>
+    <h3>{{user?.given_name}}</h3>
+    <h3>{{user?.email}}</h3>
+}

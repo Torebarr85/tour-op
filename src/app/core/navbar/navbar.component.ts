@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
@@ -17,8 +17,10 @@ export class NavbarComponent {
   auth = inject(AuthService);
   document = inject(DOCUMENT);
   authSignal = toSignal(this.auth.isAuthenticated$);
+  picture = signal<string>('');
 
   constructor() {
+    this.auth.user$.subscribe((e) => this.picture.set(e?.picture || ''));
     this.auth.isAuthenticated$.subscribe((val) => {
       console.log('isAuthenticated', val);
     });

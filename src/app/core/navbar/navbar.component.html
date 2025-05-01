@@ -1,9 +1,20 @@
-<mat-toolbar>
-  <span>My Application</span>
+<mat-toolbar color="primary" class="navbar">
+  <span class="app-title">My Application</span>
+
+  <span class="spacer"></span>
   <button mat-stroked-button routerLink="home">Home</button>
   <button mat-stroked-button routerLink="profile">Profile</button>
+
   @if(authSignal()){
-  <button mat-stroked-button (click)="auth.logout({logoutParams: {returnTo: document.location.origin}})">LogOut</button>
+  <img [src]="picture()" alt="Profile" class="profile-picture" />
+  <button
+    mat-stroked-button
+    (click)="
+      auth.logout({ logoutParams: { returnTo: document.location.origin } })
+    "
+  >
+    LogOut
+  </button>
   } @else{
   <button mat-stroked-button (click)="auth.loginWithPopup()">LogIn</button>
   }
