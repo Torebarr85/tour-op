@@ -1,1 +1,11 @@
-<p>home works!</p>
+
+
+@for( tour of tours$ | async; track tour ){
+    <app-tour-card [tour]="tour"></app-tour-card>
+
+}
+<!-- <app-tour-card [tour]="tour"></app-tour-card> -->
+<pre>{{tours$ | async | json}}</pre>
+
+
+ 
