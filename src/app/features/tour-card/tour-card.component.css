@@ -1,8 +1,32 @@
 .tour-card {
-    max-width: 400px;
+    max-width: 500px;
+        margin: 16px auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .tour-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    
+    .tour-price {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #4caf50;
+        /* Verde per il prezzo → da Material palette */
+    }
+    
+    .tour-description {
+        font-size: 0.95rem;
+        color: #555;
+        margin-top: 8px;
+    }
+    
+    mat-card-actions {
+        padding: 16px;
 }
 
-.tour-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+mat-card-actions button {
+    text-transform: none;
 }

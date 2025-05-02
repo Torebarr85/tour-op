@@ -21,7 +21,11 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@auth0/auth0-angular": "^2.2.3",
+    "@ngneat/tailwind": "^7.0.3",
+    "@tailwindcss/postcss": "^4.1.5",
+    "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },

@@ -1,17 +1,13 @@
-<mat-card class="tour-card" appearance="outlined">
-  <mat-card-header>
-    <div mat-card-avatar class="tour-header-image"></div>
-    <mat-card-title>{{tour.name}}</mat-card-title>
-    <mat-card-subtitle>{{tour.price}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src={{tour.imageUrl}} alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-     {{tour.description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full border border-gray-200 hover:shadow-md transition">
+  <img [src]="tour.imageUrl" alt="{{ tour.title }}" class="h-48 w-full object-cover" />
+
+  <div class="p-4 flex flex-col justify-between flex-grow">
+    <h2 class="text-lg font-semibold mb-1">{{ tour.title }}</h2>
+    <p class="text-sm text-gray-500 mb-3">{{ tour.title }} - €{{ tour.price }}</p>
+    <p class="text-sm text-gray-700 flex-grow">{{ tour.description }}</p>
+    
+    <div class="mt-4">
+      <button class="bg-primary text-white text-sm px-4 py-2 rounded hover:bg-primary-dark transition">Prenota</button>
+    </div>
+  </div>
+</div>
