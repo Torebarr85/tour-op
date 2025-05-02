@@ -1,12 +1,17 @@
-<mat-toolbar color="primary" class="navbar">
+<mat-toolbar color="primary" class="navbar primary">
   <span class="app-title">My Application</span>
 
   <span class="spacer"></span>
-  <button mat-stroked-button routerLink="home">Home</button>
-  <button mat-stroked-button routerLink="profile">Profile</button>
+  <button mat-button routerLink="home">Home</button>
+  <button mat-icon-button routerLink="profile">
+    @if(pictureSignal() ){
+    <img [src]="pictureSignal()" alt="Profile" class="profile-picture" />
+    } @else{
+    <mat-icon>person</mat-icon>
+    }
+  </button>
 
   @if(authSignal()){
-  <img [src]="picture()" alt="Profile" class="profile-picture" />
   <button
     mat-stroked-button
     (click)="

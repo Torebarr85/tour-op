@@ -1,28 +1,31 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { DOCUMENT } from '@angular/common';
+import { AsyncPipe, DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MatToolbarModule, RouterModule, MatButtonModule],
+  imports: [MatToolbarModule, RouterModule, MatButtonModule, MatIconModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   auth = inject(AuthService);
   document = inject(DOCUMENT);
-  authSignal = toSignal(this.auth.isAuthenticated$);
-  picture = signal<string>('');
+  authSignal = toSignal<boolean>(this.auth.isAuthenticated$);
+  userSignal = toSignal(this.auth.user$, { initialValue: null });
+
+  pictureSignal = computed(() => {
+    return this.userSignal() ? this.userSignal()?.picture : null;
+  });
 
   constructor() {
-    this.auth.user$.subscribe((e) => this.picture.set(e?.picture || ''));
-    this.auth.isAuthenticated$.subscribe((val) => {
-      console.log('isAuthenticated', val);
-    });
+    console.log(this.userSignal()); // perché sono null anche se sono loggato?
+    console.log(this.pictureSignal()); // perché sono null anche se sono loggato?
   }
 }
