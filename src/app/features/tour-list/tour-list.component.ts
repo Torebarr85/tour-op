@@ -10,7 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-tour-list',
   standalone: true,
   imports: [
     AsyncPipe,
@@ -20,10 +20,10 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     FormsModule,
   ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  templateUrl: './tour-list.component.html',
+  styleUrl: './tour-list.component.css',
 })
-export default class HomeComponent implements OnInit {
+export default class TourListComponent implements OnInit {
   tours$: Observable<Tour[]> = of([]);
   tourService = inject(TourService);
   duration: any;

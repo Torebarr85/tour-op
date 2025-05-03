@@ -1,5 +1,5 @@
-.tour-card {
-    max-width: 500px;
+/* .tour-card {
+    max-width: 400px;
         margin: 16px auto;
         border-radius: 12px;
         overflow: hidden;
@@ -14,7 +14,7 @@
         font-size: 1rem;
         font-weight: 500;
         color: #4caf50;
-        /* Verde per il prezzo → da Material palette */
+        
     }
     
     .tour-description {
@@ -27,6 +27,8 @@
         padding: 16px;
 }
 
-mat-card-actions button {
+
+ mat-card-actions button {
     text-transform: none;
 }
+*/

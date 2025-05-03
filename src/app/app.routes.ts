@@ -4,8 +4,8 @@ import { authGuardFn } from '@auth0/auth0-angular';
 //lazyloading con loadComponent instead of simply component: myComponent
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./features/home/home.component'),
+    path: 'tour-list',
+    loadComponent: () => import('./features/tour-list/tour-list.component'),
   },
   {
     path: 'profile',

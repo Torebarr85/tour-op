@@ -1,28 +1,12 @@
-<!-- <div class="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full border border-gray-200 hover:shadow-md transition">
-  <img [src]="tour.imageUrl" alt="{{ tour.title }}" class="h-48 w-full object-cover" />
-
-  <div class="p-4 flex flex-col justify-between flex-grow">
-    <h2 class="text-lg font-semibold mb-1">{{ tour.title }}</h2>
-    <p class="text-sm text-gray-500 mb-3">{{ tour.title }} - €{{ tour.price }}</p>
-    <p class="text-sm text-gray-700 flex-grow">{{ tour.description }}</p>
-    
-    <div class="mt-4">
-      <button mat-flat-button class="bg-primary text-white text-sm px-4 py-2 rounded hover:bg-primary-dark transition">Prenota</button>
-          <button mat-icon-button class="bg-primary text-white text-sm px-4 py-2 rounded hover:bg-primary-dark transition"><mat-icon>share</mat-icon></button>
-
-    </div>
- 
-  </div>
-</div> -->
 <div class="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full border border-gray-200 hover:shadow-md transition">
   <img [src]="tour.imageUrl" alt="{{ tour.title }}" class="h-48 w-full object-cover" />
-
+ 
   <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-lg font-semibold mb-1">{{ tour.title }}</h4>
     <p class="text-sm text-gray-500 mb-3">€{{ tour.price }} - {{ tour.duration }}</p>
     <p class="text-sm text-gray-700 flex-grow">{{ tour.description }}</p>
 
-    <!-- Azioni -->
+ 
     <div class="border-t border-gray-200 pt-3 mt-4 flex items-center justify-between space-x-3">
       <button mat-flat-button color="primary" class="text-sm">Prenota</button>
       <button mat-icon-button color="primary">
