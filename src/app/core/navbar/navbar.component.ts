@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AsyncPipe, DOCUMENT } from '@angular/common';
-
+ 
 @Component({
   selector: 'app-navbar',
   standalone: true,
