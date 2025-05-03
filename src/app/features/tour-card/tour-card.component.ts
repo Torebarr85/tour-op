@@ -18,5 +18,6 @@ export class TourCardComponent {
     price: 0,
     imageUrl: '',
     description: '',
+    duration: '',
   };
 }

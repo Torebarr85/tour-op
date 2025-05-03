@@ -19,12 +19,12 @@
 
   <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-lg font-semibold mb-1">{{ tour.title }}</h4>
-    <p class="text-sm text-gray-500 mb-3">  €{{ tour.price }}</p>
+    <p class="text-sm text-gray-500 mb-3">€{{ tour.price }} - {{ tour.duration }}</p>
     <p class="text-sm text-gray-700 flex-grow">{{ tour.description }}</p>
 
     <!-- Azioni -->
     <div class="border-t border-gray-200 pt-3 mt-4 flex items-center justify-between space-x-3">
-      <button mat-button color="primary" class="text-sm">Prenota</button>
+      <button mat-flat-button color="primary" class="text-sm">Prenota</button>
       <button mat-icon-button color="primary">
         <mat-icon>share</mat-icon>
       </button>
