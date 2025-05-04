@@ -12,7 +12,18 @@ import { AsyncPipe, DOCUMENT } from '@angular/common';
   standalone: true,
   imports: [MatToolbarModule, RouterModule, MatButtonModule, MatIconModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  styles: ` 
+    .profile-picture {
+    position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0; 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    border-radius: 100%; 
+}`,
 })
 export class NavbarComponent {
   auth = inject(AuthService);

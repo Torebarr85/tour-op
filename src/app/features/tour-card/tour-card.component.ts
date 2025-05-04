@@ -8,7 +8,6 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [MatCardModule, MatButtonModule, MatIcon],
   templateUrl: './tour-card.component.html',
-  styleUrl: './tour-card.component.css',
 })
 export class TourCardComponent {
   @Input() tour: Tour = {

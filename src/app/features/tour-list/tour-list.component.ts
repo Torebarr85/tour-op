@@ -21,7 +21,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   templateUrl: './tour-list.component.html',
-  styleUrl: './tour-list.component.css',
 })
 export default class TourListComponent implements OnInit {
   tours$: Observable<Tour[]> = of([]);

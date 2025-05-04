@@ -7,7 +7,6 @@ import { AuthService } from '@auth0/auth0-angular';
   standalone: true,
   imports: [AsyncPipe, JsonPipe],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css',
 })
 export default class ProfileComponent {
   auth = inject(AuthService);

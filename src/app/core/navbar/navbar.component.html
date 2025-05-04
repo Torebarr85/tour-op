@@ -1,28 +1,35 @@
-<mat-toolbar color="primary" class="navbar">
-   <button mat-button routerLink="tour-list"><mat-icon>flight</mat-icon>
-  
-  <h4 class="app-title">TourOp.com</h4>  </button> 
-  
-   <span class="spacer"></span>
- 
-  <button mat-icon-button routerLink="profile">
-    @if(pictureSignal() ){
-    <img [src]="pictureSignal()" alt="Profile" class="profile-picture" />
-    } @else{
-    <mat-icon>person</mat-icon>
-    }
-  </button>
+<mat-toolbar color="primary" class="flex justify-between">
+  <div class="flex items-center space-x-2">
+    <button mat-button routerLink="tour-list">
+      <mat-icon>flight</mat-icon>
+      <h4 class="app-title">TourOp.com</h4>
+    </button>
+  </div>
 
-  @if(authSignal()){
-  <button
-    mat-stroked-button
-    (click)="
-      auth.logout({ logoutParams: { returnTo: document.location.origin } })
-    "
-  >
-    LogOut
-  </button>
-  } @else{
-  <button mat-stroked-button (click)="auth.loginWithPopup()">LogIn</button>
-  }
+  <div class="flex items-center ">
+    <button mat-icon-button routerLink="profile">
+      @if(pictureSignal()){
+      <img
+        [src]="pictureSignal()"
+        alt="Profile"
+        class="rounded-full w-full h-full object-cover" 
+      />
+      } @else{
+      <mat-icon>person</mat-icon>
+      }
+    </button>
+
+    @if(authSignal()){
+    <button
+      mat-stroked-button
+      (click)="
+        auth.logout({ logoutParams: { returnTo: document.location.origin } })
+      "
+    >
+      LogOut
+    </button>
+    } @else{
+    <button mat-stroked-button (click)="auth.loginWithPopup()">LogIn</button>
+    }
+  </div>
 </mat-toolbar>
