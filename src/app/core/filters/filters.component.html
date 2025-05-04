@@ -1,0 +1,19 @@
+
+  <form class="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
+    
+   <input type="text" [formControl]="searchControl" placeholder="Destinazione" class="border p-2 rounded w-full" />
+    <input type="date" class="border p-2 rounded" />
+    <input type="date" class="border p-2 rounded" />
+    <button mat-flat-button type="submit" color="primary" class="text-white p-2 rounded">Cerca</button>
+  </form>
+ 
+ 
+
+<!-- 
+1. trasforma tutti i input in angular forms reactive
+2. fai un type/interface filters 
+3. dove mandi sempre in output tutto l'oggetto filters
+4. in tour list o dove decidi di mettere app-filter, <app-filters (searchValue)="onSearch($event)"></app-filters> 
+gestisci event. nel senso che poi ci fai cose. come filtrare con combineLatest la lista...
+5. forse conviene fare un serviceFilters con i metodi.
+-->

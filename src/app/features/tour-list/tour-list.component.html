@@ -12,12 +12,14 @@
   </aside>
  
   <main class="flex-1">
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-6"
-    >
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-6">
       @for (tour of filteredToursSignal(); track tour) {
       <app-tour-card [tour]="tour"></app-tour-card>
       }
     </div>
   </main>
 </div>
+
+  <div class="absolute left-1/2 transform -translate-x-1/2 top-64 w-11/12 max-w-4xl bg-white rounded-lg shadow-lg p-6 z-10">
+    <app-filters></app-filters>
+  </div>

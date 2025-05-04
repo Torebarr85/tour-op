@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { FiltersComponent } from '../../core/filters/filters.component';
 
 @Component({
   selector: 'app-tour-list',
@@ -21,6 +22,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     MatLabel,
     MatInputModule,
     MatIconModule,
+    FiltersComponent,
   ],
   templateUrl: './tour-list.component.html',
 })
