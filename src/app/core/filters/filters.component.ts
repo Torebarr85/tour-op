@@ -20,6 +20,6 @@ export class FiltersComponent implements OnInit {
   @Output() searchValue = new EventEmitter<string>();
 
   ngOnInit(): void {
-    this.search$.subscribe( e => this.searchValue.emit(e ?? ''))
+    this.search$.subscribe((e) => this.searchValue.emit(e ?? ''));
   }
 }
